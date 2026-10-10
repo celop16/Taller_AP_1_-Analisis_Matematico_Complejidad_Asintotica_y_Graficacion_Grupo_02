@@ -173,6 +173,37 @@ public void funcionB(int n) {
 }
 \end{lstlisting}
 
+
+\begin{enumerate}
+    \item Conteo de operaciones elementales. 
+\end{enumerate}
+Las operaciones elementales de este ejercicio son las siguientes:
+\begin{itemize}
+    \item \texttt{(int i = 0; i < n; i++)}: $C_1 \times n$
+    \item \texttt{(int j = 0; j < n; j++)}: $C_2 \times n$
+    \item \texttt{System.out.println("Procesando coordenadas:" + i + "," + j)}: $C_3 \times 1$
+\end{itemize}
+
+\begin{enumerate}
+    \item C\'alculo de la complejidad asint\'otica.
+\end{enumerate}
+
+\textit{Funci\'on B:}
+\[
+F(n) = (C1 * n) * (C2 * n) * C3 
+\]
+\textit{Funci\'on B:}
+\[
+F(n) = C1 * C2 * C3 * n^2
+\]
+\textit{Funci\'on B:}
+\[
+F(n) = n^2
+\]
+\[
+O(n^2)
+\]
+
 \begin{lstlisting}[language=Java,caption={C\'odigo C}]
 public void funcionC(int n) {
     int actual = n;
