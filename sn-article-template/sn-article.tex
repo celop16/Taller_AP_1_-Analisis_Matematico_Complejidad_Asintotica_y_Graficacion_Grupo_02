@@ -109,11 +109,7 @@
 \author[1,2]{\fnm{Third} \sur{Author}}\email{iiiauthor@gmail.com}
 \equalcont{These authors contributed equally to this work.}
 
-\affil*[1]{\orgdiv{Department}, \orgname{Organization}, \orgaddress{\street{Street}, \city{City}, \postcode{100190}, \state{State}, \country{Country}}}
-
-\affil[2]{\orgdiv{Department}, \orgname{Organization}, \orgaddress{\street{Street}, \city{City}, \postcode{10587}, \state{State}, \country{Country}}}
-
-\affil[3]{\orgdiv{Department}, \orgname{Organization}, \orgaddress{\street{Street}, \city{City}, \postcode{610101}, \state{State}, \country{Country}}}
+\affil*[1]{\orgdiv{Ingenieria en Ciencias de Datos e Inteligencia Artificial}, \orgname{Escuela Politecnica Nacional}, \orgaddress{\street{Av. 12 de Octubre}, \city{Quito}, \postcode{171048}, \state{Pichincha}, \country{Ecuador}}}
 
 %%==================================%%
 %% Sample for unstructured abstract %%
@@ -142,10 +138,14 @@
 \maketitle
 
 \section{Introduction}\label{sec1}
+En el desarrollo de software, la creación de soluciones efectivas va más allá de lograr que un programa arroje el resultado correcto. A medida que las aplicaciones escalan y el volumen de datos procesados aumenta, la eficiencia de los algoritmos se convierte en un factor crucial. Un código que funciona bien con pequeñas cantidades de información puede volverse inmanejable si su estructura no está optimizada. Por ello, el análisis de la complejidad algorítmica resulta fundamental, ya que nos permite predecir el comportamiento de un programa y evaluar su consumo de tiempo y recursos antes de implementarlo a gran escala.
 
-The Introduction section, of referenced text \cite{bib1} expands on the background of the work (some overlap with the Abstract is acceptable). The introduction should not include subheadings.
+En el marco de este Taller de Aprendizaje Práctico-Experimental, el presente documento tiene como objetivo aplicar los conceptos de eficiencia algorítmica para evaluar el rendimiento de tres fragmentos de código iterativos escritos en el lenguaje de programación Java. A través de este ejercicio, se busca establecer una relación clara entre el diseño interno de cada algoritmo y su respuesta ante el crecimiento continuo de los datos de entrada, variable que se representará matemáticamente como $n$.
 
-Springer Nature does not impose a strict layout as standard however authors are advised to check the individual requirements for the journal they are planning to submit to as there may be journal-level preferences. When preparing your text please also be aware that some stylistic choices are not supported in full text XML (publication version), including coloured font. These will not be replicated in the typeset article if it is accepted. 
+Para llevar a cabo este estudio, el análisis de cada bloque de código se divide en tres etapas consecutivas. En la primera fase, se realiza una inspección detallada línea por línea para extraer la función de coste. Esto implica contabilizar las operaciones elementales que ejecuta la computadora, con el fin de construir paso a paso el modelo matemático $f(n)$ exacto. Una vez definida esta ecuación, la segunda fase consiste en la determinación de su límite asintótico superior. En este punto, se simplifica la función original descartando las constantes y los términos de menor impacto para poder clasificar la complejidad del algoritmo utilizando la notación Big O ($\mathcal{O}$).
+
+Finalmente, el análisis analítico se complementa con una demostración empírica y visual mediante la graficación de los resultados obtenidos. Las curvas asintóticas resultantes de los tres ejercicios se proyectarán de manera simultánea en un único plano cartesiano, relacionando el tiempo de ejecución en el eje vertical frente al volumen de datos en el eje horizontal. Esta comparativa final servirá para evidenciar de forma práctica las distintas tasas de crecimiento de cada enfoque, permitiendo concluir visualmente cuál de los tres métodos ofrece el mejor desempeño a largo plazo.
+
 
 \section{Results}\label{sec2}
 
@@ -215,12 +215,13 @@ O(\log n)
 
 \section{Graphs}\label{sec4}
 
-Tables can be inserted via the normal table and tabular environment. To put
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{grafico1.jpeg}
+    \caption{Complejidades sobrepuestas de las funciones A, B y C.}
+    \label{fig:Comparación de complejidades}
+\end{figure}
 
-
-
-
-Sample body text. Sample body text. Sample body text. Sample body text. Sample body text (refer Figure~\ref{fig1}). Sample body text. Sample body text. Sample body text (refer Table~\ref{tab3}). 
 
 \section{Methods}\label{sec11}
 
@@ -244,25 +245,11 @@ Discussions should be brief and focused. In some disciplines use of Discussion o
 
 \section{Conclusion}\label{sec13}
 
-Conclusions may be used to restate your hypothesis or research question, restate your major findings, explain the relevance and the added value of your work, highlight any limitations of your study, describe future directions for research and recommendations. 
-
-In some disciplines use of Discussion or 'Conclusion' is interchangeable. It is not mandatory to use both. Please refer to Journal-level guidance for any specific requirements. 
-
-\backmatter
-
-\bmhead{Supplementary information}
-
-If your article has accompanying supplementary file/s please state so here. 
-
-Authors reporting data from electrophoretic gels and blots should supply the full unprocessed scans for key as part of their Supplementary information. This may be requested by the editorial team/s if it is missing.
-
-Please refer to Journal-level guidance for any specific requirements.
-
-\bmhead{Acknowledgements}
-
-Acknowledgements are not compulsory. Where included they should be brief. Grant or contribution numbers may be acknowledged.
-
-Please refer to Journal-level guidance for any specific requirements.
+El desarrollo de este taller práctico permitió evidenciar de forma concreta la profunda influencia que tiene la estructura interna de un algoritmo sobre su rendimiento computacional. A través del cálculo detallado de las funciones de coste y su posterior simplificación asintótica, se demostró que el diseño lógico del código es tan crítico como su funcionalidad. Los tres fragmentos analizados, aunque sintácticamente breves en Java, exhibieron comportamientos radicalmente distintos frente al aumento del volumen de datos, reafirmando que no todas las soluciones lógicamente válidas 
+son igualmente viables cuando se llevan a una escala mayor.
+Al contrastar los resultados matemáticos, se identificaron tres categorías fundamentales de complejidad que marcan la diferencia en el diseño de software. La Función A, estructurada mediante un ciclo iterativo simple, presentó un crecimiento estrictamente lineal $\mathcal{O}(n)$, lo que indica que su tiempo de ejecución aumenta de manera proporcional a los datos de entrada. Por el contrario, la presencia de iteraciones anidadas en la Función B desencadenó un crecimiento cuadrático $\mathcal{O}(n^2)$, demostrando ser el enfoque más ineficiente de los tres y el más susceptible a 
+generar cuellos de botella computacionales ante grandes volúmenes de información. En el extremo opuesto, la Función C destacó por su eficiencia al dividir sucesivamente el tamaño del problema, logrando un tiempo de ejecución logarítmico $\mathcal{O}(\log n)$ que garantiza una escalabilidad excepcional.
+Finalmente, el análisis gráfico consolidó estas abstracciones teóricas en una comprobación empírica y visual. Al proyectar las tres curvas de rendimiento de manera simultánea en el plano cartesiano, quedó ilustrada con total claridad la separación de los límites asintóticos. Mientras que la curva logarítmica tendía a estabilizarse rápidamente y la curva lineal mantenía un ritmo predecible, la curva cuadrática experimentó un crecimiento acelerado e insostenible en el eje del tiempo. En definitiva, este ejercicio subraya la importancia de la notación Big O como una herramienta analítica indispensable, la cual permite a los desarrolladores prever el impacto de sus decisiones de código y optimizar el consumo de los recursos del sistema antes de su implementación final.
 
 \section*{Declarations}
 
@@ -303,37 +290,18 @@ Nature Portfolio journals: \url{https://www.nature.com/nature-research/editorial
 BMC journals: \url{https://www.biomedcentral.com/getpublished/editorial-policies}
 \end{flushleft}
 
-\begin{appendices}
 
-\section{Section title of first appendix}\label{secA1}
+\begin{thebibliography}{99}
 
-An appendix contains supplementary information that is not an essential part of the text itself but which may be helpful in providing a more comprehensive understanding of the research problem or it is information that is too cumbersome to be included in the body of the paper.
+\bibitem{bhargava2016}
+Bhargava, A. Y. (2016). \textit{Grokking Algorithms: An illustrated guide for programmers and other curious people}. Manning Publications.
 
-%%=============================================%%
-%% For submissions to Nature Portfolio Journals %%
-%% please use the heading ``Extended Data''.   %%
-%%=============================================%%
+\bibitem{lafore2017} 
+Lafore, R. (2017). \textit{Data Structures and Algorithms in Java} (2\textsuperscript{da} ed.). Sams Publishing.
 
-%%=============================================================%%
-%% Sample for another appendix section			       %%
-%%=============================================================%%
+\bibitem{astudillo2026}
+Galarza, D. (2026). \textit{Análisis Matemático y Complejidad Asintótica} [Diapositivas de clase]. Asignatura de Estructura de Datos y Algoritmos, Escuela Politécnica Nacional.
 
-%% \section{Example of another appendix section}\label{secA2}%
-%% Appendices may be used for helpful, supporting or essential material that would otherwise 
-%% clutter, break up or be distracting to the text. Appendices can consist of sections, figures, 
-%% tables and equations etc.
-
-\end{appendices}
-
-%%===========================================================================================%%
-%% If you are submitting to one of the Nature Portfolio journals, using the eJP submission   %%
-%% system, please include the references within the manuscript file itself. You may do this  %%
-%% by copying the reference list from your .bbl file, paste it into the main manuscript .tex %%
-%% file, and delete the associated \verb+\bibliography+ commands.                            %%
-%%===========================================================================================%%
-
-\bibliography{sn-bibliography}% common bib file
-%% if required, the content of .bbl file can be included here once bbl is generated
-%%\input sn-article.bbl
+\end{thebibliography}
 
 \end{document}
