@@ -152,7 +152,13 @@ Finalmente, el análisis analítico se complementa con una demostración empíri
 
 \section{Results}\label{sec2}
 
-Sample bodyee text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. 
+El análisis de complejidad algorítmica realizado sobre las fracciones de código evaluados nos permitió determinar el comportamiento del tiempo de ejecución y el costo computacional en función del tamaño de la entrada.
+
+Para la función A, el algoritmo implementa un bucle simple donde la variable utilizada para controlar este mismo incrementa de forma unitaria en cada iteración, lo cual da como resultado un número de operaciones directamente proporcional a n (tamaño de entrada), por lo que su complejidad es de $O(n)$.
+
+Por otro lado, la función B introduce dos bucles anidados que recorren el rango completo de la entrada, en consecuencia, el número total de operaciones elementales se multiplicarán (n x n). Esto genera una función de costo cuadrática, estableciendo una complejidad algorítmica de $O(n^2)$.
+
+Para finalizar, la función C implemsdadsadsasdsdaasenta un bucle iterativo que se divide de manera sucesiva (actual = actual / 2), donde el valor de la variable utilizada para el bucle se va reduciendo a la mitad cada vez que itera, este comportamiento restringe al número total de ejecuciones a el número de veces que se puede dividir el tamaño de la entrada para 2, determinando una complejidad algorítmica de $O(\log n)$.
 
 \section{Equations}\label{sec3}
 
@@ -256,6 +262,13 @@ O(\log n)
     \label{fig:Comparación de complejidades}
 \end{figure}
 
+La representación gráfica de las tres funciones confirma de manera visual los resultados teóricos obtenidos mediante el conteo de operaciones elementales. En el plano cartesiano, donde el eje horizontal representa el tamaño de entrada $n$ y el eje vertical representa el costo computacional, se puede observar claramente la diferencia en las tasas de crecimiento de cada algoritmo.
+
+Para la funcion C, se nota un crecimiento inicial que con medida que avanza se aplana de forma casi horizontal, lo cual demuestra alta eficiencia en valores altos de entrada.
+
+Por otro lado, la funcion A mantiene un crecimiento uniforme, tanto para valores altos como bajos, lo cual demuestra un crecimiento proporcional al número de entrada con el tiempo.
+
+Pero, para la funcion B se mira un crecimiento acelerado de manera vertical y acelerada cuando el tamaño de entrada empieza a crecer, el comportamiento demuestra de manera visual el alto costo algorítmico. 
 
 \section{Methods}\label{sec11}
 
